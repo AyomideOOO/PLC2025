@@ -3,11 +3,14 @@ module Intro2 where
 -- String algebra:
 name = "Alice"
 -- "if" has a special syntax but otherwise a typed version of Lisp's "if":
+
+{- if name is not empty the result will be 'name' 
+  else if name == "" the result will be no name -}
 name2 = if name /= "" then name else "no name"
 
 pname3 = print "Bob"
 
-myprogram = print (1 + m)  -- compiler error: m undefined
+myprogram = print (1 + m)   -- compiler error: m undefined
 m = 1                      -- unless this line is also present
 
 -- sequencing several imperative programs:
@@ -19,6 +22,7 @@ prg1 = do
 prg1' = sequence_ [print "hello ", print name]
 
 -- one imperative program passing value to another:
+{- Like scanner in java, user input -}
 prg2 = do
   line <- getLine
   putStrLn ("you typed: " ++ line)
@@ -32,6 +36,8 @@ main =
 
 
 -- generic string conversion, using a Java-friendly name:
+{- converts value to a string, and show value shows 
+the value-}
 toString value = show value
 
 -- string concatenation:
